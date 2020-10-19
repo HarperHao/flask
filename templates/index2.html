@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WTF实现表单</title>
+</head>
+<body>
+<form method="post">
+    {#    csrf：跨站请求伪造    #}
+    {{ login_form.csrf_token() }}
+    {{ login_form.username.label }}{{ login_form.username }} <br>
+    {{ login_form.password.label }}{{ login_form.password }} <br>
+    {{ login_form.password2.label }}{{ login_form.password2 }} <br>
+    {{ login_form.submit }} <br>
+</form>
+<h3> {% for message in get_flashed_messages() %}
+    {{ message }}
+{% endfor %}
+</h3>
+</body>
+</html>

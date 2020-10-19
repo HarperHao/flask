@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JinJia2</title>
+</head>
+<body>
+{#变量代码块#}
+你好<br>
+JinJia2<br>
+<h1>{{ my_name }}</h1>
+<h2>{{ my_list[2] }}</h2>
+<h3>{{ my_dict.get("name") }}</h3>
+<hr>
+{#控制代码块的使用#}
+{% for num in my_list %}
+    {% if num>3 %}
+        {{ num }}<br>
+    {% endif %}
+{% endfor %}
+{# 过滤器的使用，格式：{{变量名|过滤函数}} #}
+
+<p>{{ my_name|upper}}</p>
+</body>
+</html>

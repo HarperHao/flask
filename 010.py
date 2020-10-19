@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 
 # 定义路由视图
+# 支持get和post方法
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return 'hello flask'

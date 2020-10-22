@@ -6,7 +6,6 @@ FUNCTION:  《Flask入门》
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
-import click
 
 app = Flask(__name__)
 

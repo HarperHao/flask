@@ -4,11 +4,11 @@
     <p>{{ movies| length }} Titles</p>
     <ul class="movie-list">
         {% for movie in movies %}
-            <li>{{ movie.title }}-{{ movie.year }}
+            <li class="movie-item">{{ movie.title }}-{{ movie.year }}
                 <span class="float-right">
                     <a class='douban' href=" https://movie.douban.com/subject_search?search_text={{ movie.title }}"
                        target="_blank"
-                       title="Find this movie on IMDb">豆瓣</a>
+                       title="Find this  movie on douban">豆瓣</a>
                 </span>
             </li>
         {% endfor %}

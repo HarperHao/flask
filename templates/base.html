@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block  head %}
+    {% block head %}
         <meta charset="utf-8">
         {# 让页面根据设备的宽度来自动缩放页面  #}
         <meta name="viewport" content="witdth=device-width,initial-scale=1.0">
@@ -14,6 +14,10 @@
 <h2>
     <img alt="Avatar" class="avatar" src="{{ url_for('static',filename="avatar.png") }}">
     {{ user.name }}'s Watchlist
+    {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
+
 </h2>
 {#<nav>标记一个导航栏#}
 <nav>

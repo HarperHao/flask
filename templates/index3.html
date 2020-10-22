@@ -2,10 +2,26 @@
 
 {% block content %}
     <p>{{ movies| length }} Titles</p>
+    {# 定义添加电影信息框   #}
+    <form method="post">Name
+        <label>
+            <input type="text" name="title" autocomplete="off" required>
+        </label>
+        Year
+        <label>
+            <input type="text" name="year" autocomplete="off" required>
+        </label>
+        <input class="btn" type="submit" name="submit" value="Add">
+    </form>
+
     <ul class="movie-list">
         {% for movie in movies %}
-            <li class="movie-item">{{ movie.title }}-{{ movie.year }}
+            <li>{{ movie.title }}-{{ movie.year }}
                 <span class="float-right">
+                    <a href="{{ url_for('edit',movie_id=movie.id) }}" class='btn'>编辑</a>
+                     <form class="inline-form" method="post" action="{{ url_for('delete', movie_id=movie.id) }}">
+                        <input class="btn" type="submit" name="delete" value="删除" onclick="return confirm('你确定吗？')">
+                    </form>
                     <a class='douban' href=" https://movie.douban.com/subject_search?search_text={{ movie.title }}"
                        target="_blank"
                        title="Find this  movie on douban">豆瓣</a>
